@@ -2,12 +2,12 @@ import React from 'react'
 import moment from 'moment'
 import './style.scss'
 
-let weekdays = ['sun','mon','tue','wed','thu','fri','sat']
 
-function Calendar({month,year}){
+function Calendar(props){
+
+    let weekdays = ['sun','mon','tue','wed','thu','fri','sat']
 
     function CreateCalendar (month, year) {
-
         let pointer = 0;
         let day = 1;
         let date = moment(year+String(month).padStart(2, '0')+"01")
@@ -22,7 +22,7 @@ function Calendar({month,year}){
                 calendarDays.push(<td className="calendar__empty" />)
                 pointer += 1
             } else {
-                calendarDays.push(<td className="calendar__date">day</td>)
+                calendarDays.push(<td className="calendar__date">{day}</td>)
                 day += 1
                 pointer += 1
             }
@@ -37,14 +37,12 @@ function Calendar({month,year}){
     }
 
 
-    let calendarDays =  CreateCalendar(month, year)
-    let date = moment(year+String(month).padStart(2, '0')+"01")
+    let date = moment(year+String(props.month).padStart(2, '0')+"01")
+    let calendarDays =  CreateCalendar(props.month, props.year)
     let monthName = date.format('MMMM')
 
     
     return <table className="calendar">
-
-        
         <thead>
             <tr><td colSpan={7} className='calendar__month'>{monthName}/{year}</td></tr>
             <tr>
