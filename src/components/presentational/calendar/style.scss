@@ -1,0 +1,38 @@
+
+
+.calendar {
+
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+
+    
+    &__date {
+        font-family: $main-font-family;
+        text-align: center;
+        padding: 3px;
+        font-size: 14px;
+    }
+
+
+    &__month {
+        font-family: $main-font-family;
+        font-weight: 800;
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+
+    &__day{
+        font-family: $main-font-family;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        color: rgba(0,0,0,0.3);
+    }
+
+    &__dates, &__days {
+        width: 500px;
+    }
+}
